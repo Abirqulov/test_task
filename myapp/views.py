@@ -69,7 +69,7 @@ def news(request):
     if request.user.is_authenticated:
         print('user',  request.user)
         contact = Contact.objects.all()
-        return render(request, 'course.html', {'contact': contact, 'news': news})
+        return render(request, 'news.html', {'contact': contact, 'news': news})
     else:
         print('user2 = ', request.user)
         return HttpResponseRedirect(reverse('login'))
